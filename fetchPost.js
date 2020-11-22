@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 require('dotenv').config()
 
 const { Facebook, FacebookApiException } = require('fb')
@@ -11,4 +13,8 @@ const postIDs = [
 const fb = new Facebook({
   appId: process.env.FB_APP_ID,
   appSecret: process.env.FB_APP_SECRET,
+})
+
+postIDs.forEach(postID => {
+  console.log('POST ID: ' + postID)
 })
